@@ -7,23 +7,23 @@ Wax is the best bridge between Lua and Objective-C, we will be maintaining it he
 Wax
 ---
 
-Wax is a framework that lets you write native iPhone apps in 
-[Lua](http://www.lua.org/about.html). It bridges Objective-C and Lua using the 
+Wax is a framework that lets you write native iPhone apps in
+[Lua](http://www.lua.org/about.html). It bridges Objective-C and Lua using the
 Objective-C runtime. With Wax, **anything** you can do in Objective-C is **automatically**
 available in Lua! What are you waiting for, give it a shot!
 
 Why write iPhone apps in Lua?
 -----------------------------
 
-I love writing iPhone apps, but would rather write them in a dynamic language than in Objective-C. Here 
+I love writing iPhone apps, but would rather write them in a dynamic language than in Objective-C. Here
 are some reasons why many people prefer Lua + Wax over Objective-C...
 
 * Automatic Garbage Collection! Gone are the days of alloc, retain, and release.
 
-* Less Code! No more header files, no more static types, array and dictionary literals! 
+* Less Code! No more header files, no more static types, array and dictionary literals!
   Lua enables you to get more power out of less lines of code.
 
-* Access to every Cocoa, UITouch, Foundation, etc.. framework, if it's written in Objective-C, 
+* Access to every Cocoa, UITouch, Foundation, etc.. framework, if it's written in Objective-C,
   Wax exposes it to Lua automatically. All the frameworks you love are all available to you!
 
 * Super easy HTTP requests. Interacting with a REST webservice has never been eaiser
@@ -112,11 +112,11 @@ local bigFont = UIFont:boldSystemFontOfSize(30)
 local size = toobjc(testString):sizeWithFont(bigFont)
 puts(size)
 ```
-    
+
 How do I convert Lua functions to Objective-C blocks? [see more detail](https://github.com/alibaba/wax/wiki/Block).
 
 ``` lua
-UIView:animateWithDuration_animations_completion(1, 
+UIView:animateWithDuration_animations_completion(1,
     toblock(
         function()
             label:setCenter(CGPoint(300, 300))
@@ -170,7 +170,7 @@ You want to call some C functions?
 ``` lua
 luaSetWaxConfig({wax_openBindOCFunction=true})--bind built-in C function
 
-dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), 
+dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
         toblock(
             function( )
                 print(string.format("dispatch_async"));
@@ -194,7 +194,7 @@ Lua code debug
 Any way to debug my Lua code?   
 Ofcourse, you can use the powerfull ZeroBraneStudio to debug. [see more detail](https://github.com/alibaba/wax/tree/master/examples/LuaCodeDebug).
 
-Watch OS 
+Watch OS
 ------
 Can Wax run on watch OS?
 Thanks to the cross platform characteristics of Lua, Wax can run on watch OS certainly. see tools/WaxWatchFramework and examples/WaxWatchExample
@@ -210,7 +210,7 @@ see examples/TestWaxPod demo.
 wax_start(nil, nil);
 wax_runLuaString("print('hello wax')");
 ```
-    
+
 Setup & Tutorials
 -----------------
 
